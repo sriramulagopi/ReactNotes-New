@@ -13,6 +13,9 @@ const userInfoSlice = createSlice({
       state.apiStatus = action.payload.apiStatus;
       action.payload.data && (state.data = action.payload.data);
     },
+    commentIncrement:(state,action)=>{
+      state.data.posts=+1;
+    }
   },
 });
 const postSlice = createSlice({
@@ -22,11 +25,14 @@ const postSlice = createSlice({
     setPosts:(state,action)=>{
       state.apiStatus=action.payload.apiStatus;
       state.data=action.payload.data;
+    },
+    addNewPost:(state,action)=>{
+      state.data.push(action.payload);
     }
   }
 })
-export const {setUserInfo}=userInfoSlice.actions;
-export const {setPosts}=postSlice.actions
+export const {setUserInfo,commentIncrement}=userInfoSlice.actions;
+export const {setPosts,addNewPost}=postSlice.actions
 const store = configureStore({ reducer: {
   user:userInfoSlice.reducer,
   post:postSlice.reducer,

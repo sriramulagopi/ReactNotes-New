@@ -6,6 +6,7 @@ const request = async (httpConfig)=>{
         const respondse = await axios({
             url:httpConfig.url,
             method:httpConfig.method,
+            ...(httpConfig.data && {data:httpConfig.data}),
             headers:{
                 Authorization: `Bearer :${token}`
             }

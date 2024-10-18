@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./App";
 import { useDispatch, useSelector } from "react-redux";
-import { ApiStatus, setUserInfo } from "./store";
+import { addNewPost, ApiStatus, commentIncrement, setUserInfo } from "./store";
 import request from "./request";
 import Posts from "./PostLists";
 import { Form, Input, TextArea,Modal, Button } from "antd";
@@ -18,8 +18,23 @@ const HomePage = function () {
   const show = function () {
     setBool(!bool);
   };
-  const onFinish = function(data){
-    console.log(data)
+  const onFinish = async function(data){
+    const payload = {title:data.title,content:data.content,imageUrls:[data.imageurl]}
+    try{
+      const httpConfig = {
+        url:"https://node-auth-jwt-w78c.onrender.com/post/create",
+        method:"POST",
+        data:payload
+      }
+      const {success,data} = await request(httpConfig);
+      if(success){
+        dispatch(addNewPost(data[0]))
+        dispatch(commentIncrement())
+      }
+    }
+    catch(err){
+      alert("Unable to create post")
+    }
     setBool(!bool)
   }
   useEffect(() => {
@@ -80,6 +95,9 @@ const HomePage = function () {
               </Form.Item>
               <Form.Item name="content" rules={[{required:true,message:"Post Content is required"}]}>
                 <Input.TextArea placeholder="Post content" />
+              </Form.Item>
+              <Form.Item name="imageurl" rules={[{type:"url",message:"Give valid url"}]}>
+                <Input placeholder="Image URL"/>
               </Form.Item>
               <Button htmlType="submit">Create Post</Button>
             </Form>
