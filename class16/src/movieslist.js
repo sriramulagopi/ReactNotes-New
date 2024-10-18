@@ -125,6 +125,7 @@ const MoviesList = function(){
                 <b>{movie.releaseDate}</b>
             </Link>
         })}
+        <Link to="/likedSongs">LikedSongs</Link>
     </div>
 }
 export default MoviesList;

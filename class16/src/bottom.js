@@ -27,7 +27,7 @@ const Bottom = function(){
             <img src={selectedMovie?selectedMovie.displayPicture:defaultImage} alt="Image failed load"/>
             <div className="playingSong">
                 <div className="div1">
-                    <span className="bottomTitle">{selectedMovie?selectedMovie.name:"Devara"}</span>
+                    <span className="bottomTitle">{selectedMovie?selectedSong.title:"Devara"}</span>
                     <span className="material-icons">favorite</span>
                 </div>
                 <b>Shilpa rao</b>
