@@ -1,0 +1,88 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.homepage{
+    height: 100vh;
+    .nav{
+        padding: 0px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: black;
+        height: 10%;
+        color: white;
+        border-bottom: 1px solid white;
+        div{
+            display: flex;
+            gap: 20px;
+        }
+    }
+}
+.signup{
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .head1{
+            p{
+                font-size: 45px;
+            }
+        }
+        input{
+            width: 43vw;
+            padding: 8px;
+            font-size: large;
+            border: none;
+            border-bottom: 1px solid white;
+            background-color: black;
+            color: white;
+        }
+        input:focus{
+            outline: none;
+        }
+        input::placeholder{
+            font-size: large;
+        }
+        button{
+            padding: 10px 50px;
+            font-size: large;
+            width: fit-content;
+        }
+        p{
+            font-size: large;
+        }
+        .error{
+            color: red;
+        }
+        .success{
+            color: green;
+        }
+    }
+}
+.profile{
+    padding: 20px;
+    .details{
+        font-size: 25px;
+        display: flex;
+        h2{
+            font-weight: 400;
+        }
+        flex-direction: column;
+        gap: 40px;
+        button{
+            width: fit-content;
+            padding: 10px 30px;
+            font-size: large;
+        }
+    }
+}
