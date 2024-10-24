@@ -20,6 +20,7 @@ const HomePage = function () {
   };
   const onFinish = async function(data){
     const payload = {title:data.title,content:data.content,imageUrls:[data.imageurl]}
+    console.log(payload);
     try{
       const httpConfig = {
         url:"https://node-auth-jwt-w78c.onrender.com/post/create",
