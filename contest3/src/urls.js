@@ -7,5 +7,10 @@ const endPoints= {
     postsList:`${baseUrl}/post/all`,
     createPost:`${baseUrl}/post/create`,
     CommentLists:`${baseUrl}/post/comments`,
+    suggestionsList:`${baseUrl}/user/suggestions`,
+    follow:`${baseUrl}/user/follow`,
+    unfollow:`${baseUrl}/user/unfollow`,
+    followersList:`${baseUrl}/user/followers`,
+    followingsList:`${baseUrl}/user/following`
 }
 export default endPoints;

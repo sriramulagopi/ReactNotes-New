@@ -1,40 +1,28 @@
-// function add(a){
-//     let count = 1;
-//     return function(b){
-//         if(b!==undefined){
-//             return add(a*b);
-//         }
-//         return a;
-//     }
-// }
-// console.log(add(1)(5)(2)(3)());
-let arr = [[1,2,3],[1,2,3],[1,2,3]];
-function flatten(arr){
-    let arr1 = [];
-    for (let i=0;i<arr.length;i++){
-        arr1.push(...arr[i]);
-    }
-    return arr1;
-}
-console.log(flatten(arr));
+// const h1 = document.createElement("h1");
+// h1.innerText="Hello World!";
+// // document.body.appendChild(h1);
+// const div = document.createElement("div");
+// div.innerHTML=`
+// <p class="para">Para text</p>
+// <b class="bold">bold text</b>
+// `;
+// div.appendChild(h1);
+// document.body.append(div);
 
-// let obj = {
-//     a:1,
-//     b:2,
-//     c:3,
-// }
-// Object.freeze(obj);
-// let obj2 = obj;
-// obj2.a=100;
-// console.log(obj2)
-// console.log(obj)
+import sum, { obj } from "./script2.js";
 
-// let one = false || {} || null;
-// let two = null || true || "";
-// const three = false || 0 || [];
-// console.log(one,typeof two,three);
-console.log(typeof null);
-console.log(typeof undefined)
+// types of imports named import and default import 
+// we have maintain only default export and named imports are multiple
 
-let str = "gopi".slice(0,3);
-console.log(str)
+console.log(React);
+console.log(ReactDOM);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const h1 = React.createElement("h1",{className:"heading",id:"head"},"Welcome to React!");
+const p = React.createElement("p",{className:"para"},"Para text");
+const b = React.createElement("b",{className:"bold"},"Bold text");
+const div = React.createElement("div",{className:"container"},h1,p,b);
+root.render(div);
+console.log(sum(10,20))
+console.log(obj)
+obj.Name="Asif";
+console.log(obj)

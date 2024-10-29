@@ -94,3 +94,38 @@ body {
       font-size: 25px;
     }
 }
+.connectionContainer{
+  .ant-tabs-tab-btn{
+    color: white;
+  }
+  .tab{
+    color: white;
+  }
+}
+.spin{
+  padding: 100px;
+}
+.suggestions{
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  width: min(500px,90vw);
+  border: 1px solid #e3e3e3;
+  margin: auto;
+  gap: 15px;
+  color: white;
+  .user{
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 20px;
+    button{
+      font-size: large;
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px;
+    }
+  }
+}

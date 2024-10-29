@@ -7,7 +7,9 @@ import "./style2.css";
 import PostsLists from "./PostsList.js";
 import { addComment, userData } from "./store.js";
 import axios from "axios";
+import { Outlet, useNavigate } from "react-router-dom";
 const LoggedUser = function () {
+  const navigate  = useNavigate();
   const [bool, setBool] = useState(false);
   const { apiStatus, data } = useSelector((state) => state.b.userDetails);
   const dispatch = useDispatch();
@@ -67,15 +69,15 @@ const LoggedUser = function () {
           >
             add
           </button>
-          <div>
+          <div onClick={()=>{navigate("/connections/followers")}}>
             <b>{data.followers}</b>
             <b>Followers</b>
           </div>
-          <div>
+          <div onClick={()=>{navigate("/connections/following")}}>
             <b>{data.following}</b>
             <b>Following</b>
           </div>
-          <div>
+          <div onClick={()=>{navigate("/connections/suggestions")}}>
             <b>{data.posts}</b>
             <b>Posts</b>
           </div>
@@ -131,6 +133,7 @@ const LoggedUser = function () {
         )}
       </div>
       {data ? <PostsLists /> : <h1>Fetching Posts....</h1>}
+      <Outlet/>
     </div>
   );
 };
